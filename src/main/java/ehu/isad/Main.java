@@ -5,7 +5,6 @@ package ehu.isad;
 
 
 import ehu.isad.controller.ui.AdminKud;
-import ehu.isad.controller.ui.MainKud;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

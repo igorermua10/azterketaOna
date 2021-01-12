@@ -55,6 +55,9 @@ public class AdminKud implements Initializable {
         private Button btn_check;
 
         @FXML
+        List<Datuak> datuLista =null;
+        ObservableList<Datuak> datuaaak = FXCollections.observableArrayList(datuLista);
+
         void onCheck(ActionEvent event) throws IOException, NoSuchAlgorithmException {
            String web= sartuURL.getText()+"/README";
            String md5= MessageDigestForUrl.md5Itzuli(web);
@@ -65,10 +68,8 @@ public class AdminKud implements Initializable {
                erakutsi.setMd5(md5);
                erakutsi.setUrl(url);
                erakutsi.setVersion(bertsioa);
+               datuLista.add(erakutsi);
 
-               List<Herrialdea> herrialdeLista = EurobisioaKud.getInstance().lortuHerrialdeak();
-               ObservableList<Herrialdea> herrialdeak = FXCollections.observableArrayList(herrialdeLista);
-               cmbx_herrialdeak.setItems(herrialdeak);
 
            }
 
@@ -78,6 +79,7 @@ public class AdminKud implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        tabla.setItems(datuaaak);
 
     }
 

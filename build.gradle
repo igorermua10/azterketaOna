@@ -24,14 +24,14 @@ java {
 }
 
 application {
-    mainModule = 'javafx' // name defined in module-info.java
+    mainModule = 'EurovisionEIB' // name defined in module-info.java
     mainClass = 'ehu.isad.Main'
 }
 
 
 
 // ext.moduleName = 'gradlejavafxhelloworld'
-mainClassName = "$moduleName/ehu.isad.EurovisionEIB"
+mainClassName = "$moduleName/ehu.isad.Main"
 
 
 javafx {
@@ -49,6 +49,8 @@ dependencies {
 
     //sqlite
     compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.28.0'
+    //md5
+    compile 'commons-codec:commons-codec:1.15'
 }
 
 repositories {
